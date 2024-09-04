@@ -1,4 +1,6 @@
 #include <Arduino.h>
+#include <HX711.h>
+#include <LiquidCrystal_I2C.h>
 
 // put function declarations here:
 int myFunction(int, int);
