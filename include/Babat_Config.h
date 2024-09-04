@@ -1,0 +1,11 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+// LOADCELL PIN
+#define LOADCELL_DOUT_PIN 5
+#define LOADCELL_SCK_PIN 18
+
+// BUZZER PIN
+#define PIN_BUZZER 19
+
+#endif // CONFIG_H
