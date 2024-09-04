@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef BABAT_CONFIG_H
+#define BABAT_CONFIG_H
 
 // SERIAL BAUDRATE
 #define SERIAL_BAUDRATE 115200
