@@ -1,9 +1,17 @@
 #include "Babat_Loadcell.h"
 
 // Inisialisasi variabel global
+
+//---------HX711-------------//
 HX711 scale;
 float buffer[BUFFER_SIZE];
-int bufferIndex = 0;
+byte bufferIndex = 0;
+
+//--------Kalman Filter---------//
+const float e_mea = 1;
+const float e_est = 1;
+const float q = 0.01;
+SimpleKalmanFilter KF(e_mea, e_est, q);
 
 // Setup buffer
 void initializeBuffer()
@@ -35,7 +43,7 @@ void rawBuffer()
 }
 
 // Hitung rata-rata
-float calculateAverage()
+float processedWeight()
 {
     float sum = 0.0f;
     rawBuffer();
@@ -46,10 +54,20 @@ float calculateAverage()
     return sum / BUFFER_SIZE;
 }
 
+float processedWeight_KF()
+{
+    return KF.updateEstimate(rawWeight());
+}
+
 // Hasil perhitungan obat
 float estimatedCount()
 {
-    return calculateAverage() / OBAT_WEIGHT;
+    return processedWeight() / OBAT_WEIGHT;
+}
+
+float estimatedCount_KF()
+{
+    return processedWeight_KF() / OBAT_WEIGHT;
 }
 
 // Setup loadcell
