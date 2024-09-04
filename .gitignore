@@ -4,4 +4,5 @@
 .vscode/launch.json
 .vscode/ipch
 .vscode/settings.json
-.include\Babat_Config.h
+.include/Babat_Config.h
+.src/Babat_Config.cpp

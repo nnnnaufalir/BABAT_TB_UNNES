@@ -4,7 +4,6 @@
 #include <HX711.h>
 #include <SimpleKalmanFilter.h>
 #include "Babat_Config.h"
-
 // Konstanta
 #define FACTOR 5925
 #define BUFFER_SIZE 15

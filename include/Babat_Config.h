@@ -5,8 +5,8 @@
 #define SERIAL_BAUDRATE 115200
 
 // WiFi Credentials
-const char *ssids[] = {"Galaxy A50s", "SSID2", "SSID3", nullptr};
-const char *passwords[] = {"22224444", "password2", "password3", nullptr};
+extern const char *ssids[];
+extern const char *passwords[];
 
 // LOADCELL PIN
 #define LOADCELL_DOUT_PIN 5
