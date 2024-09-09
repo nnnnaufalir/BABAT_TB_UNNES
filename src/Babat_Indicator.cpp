@@ -1,5 +1,3 @@
-#include <Arduino.h>
-#include "Babat_Config.h"
 #include "Babat_Indicator.h"
 
 void buzzer_setup()
