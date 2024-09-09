@@ -7,6 +7,7 @@
 #include "Babat_Loadcell.h"
 #include "Babat_OTA.h"
 #include "Babat_Indicator.h"
+#include "Babat_Display.h"
 #include "WiFiHelper.h"
 
 //---------Timer Class-------------//
@@ -25,12 +26,17 @@ void setup()
   // SERIAL 0
   Serial.begin(SERIAL_BAUDRATE);
 
+  // Display
+  display_setup();
+
   // Buzzer
   buzzer_setup();
   Start_bootingBuzz();
 
   // WIFI
   connectToWiFi(ssids, passwords);
+
+  display_booting();
 
   // OTA
   OTA_setup();
