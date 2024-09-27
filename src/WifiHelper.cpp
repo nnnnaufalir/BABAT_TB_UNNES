@@ -1,7 +1,7 @@
 #include "WiFiHelper.h"
 
 // Definisi konstanta
-const unsigned long CONNECTION_TIMEOUT = 30000; // Timeout untuk koneksi WiFi
+const unsigned long CONNECTION_TIMEOUT = 15000; // Timeout untuk koneksi WiFi
 const long SIGNAL_THRESHOLD = -80;              // Threshold RSSI untuk kualitas sinyal
 
 unsigned long previousMillis = 0;
@@ -55,7 +55,7 @@ bool attemptWiFiConnection(const char *ssid, const char *password, unsigned long
 }
 
 // Definisi fungsi untuk menghubungkan ke jaringan WiFi yang tersedia
-void connectToWiFi(const char *ssids[], const char *passwords[])
+void connectToWiFi()
 {
     Serial.println("Menghubungkan ke WiFi...");
 
@@ -74,7 +74,7 @@ void connectToWiFi(const char *ssids[], const char *passwords[])
 }
 
 // Definisi fungsi untuk memeriksa dan menyambung kembali ke WiFi jika terputus
-void reconnectWiFi(const char *ssids[], const char *passwords[])
+void reconnectWiFi()
 {
     unsigned long currentMillis = millis();
 
@@ -85,7 +85,7 @@ void reconnectWiFi(const char *ssids[], const char *passwords[])
         if (!wifiConnected())
         {
             Serial.println("Koneksi WiFi terputus! Mencoba menghubungkan kembali...");
-            connectToWiFi(ssids, passwords);
+            connectToWiFi();
         }
         else
         {

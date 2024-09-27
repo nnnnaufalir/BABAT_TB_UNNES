@@ -33,10 +33,10 @@ void setup()
   buzzer_setup();
   Start_bootingBuzz();
 
-  // WIFI
-  connectToWiFi(ssids, passwords);
-
   display_booting();
+
+  // WIFI
+  connectToWiFi();
 
   // OTA
   OTA_setup();
@@ -45,6 +45,7 @@ void setup()
 
   loadcell_setup();
   End_bootingBuzz();
+  display_clear();
 
   //------Timer running------------//
   timer.setInterval(20, loadcell_loop);
@@ -57,8 +58,8 @@ void setup()
 
 void loop()
 {
-
-  reconnectWiFi(ssids, passwords);
+  display_main();
+  reconnectWiFi();
   OTA_loop();
 
   timer.run();
@@ -69,6 +70,7 @@ void loadcell_loop()
 {
   jumlah_obat = estimatedCount();
 }
+
 //-------Debug Print------------//
 void printData()
 {
