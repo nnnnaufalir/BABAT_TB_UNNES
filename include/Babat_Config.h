@@ -15,4 +15,8 @@ extern const char *passwords[];
 // BUZZER PIN
 #define PIN_BUZZER 32
 
+#define TFT_CS 5
+#define TFT_RST 12
+#define TFT_DC 15
+
 #endif // CONFIG_H
