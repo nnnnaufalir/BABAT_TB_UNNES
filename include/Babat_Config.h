@@ -9,10 +9,10 @@ extern const char *ssids[];
 extern const char *passwords[];
 
 // LOADCELL PIN
-#define LOADCELL_DOUT_PIN 5
-#define LOADCELL_SCK_PIN 18
+#define LOADCELL_DOUT_PIN 13
+#define LOADCELL_SCK_PIN 14
 
 // BUZZER PIN
-#define PIN_BUZZER 19
+#define PIN_BUZZER 32
 
 #endif // CONFIG_H

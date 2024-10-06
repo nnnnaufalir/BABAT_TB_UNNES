@@ -36,12 +36,12 @@ void setup()
   display_booting();
 
   // WIFI
-  connectToWiFi();
+  // connectToWiFi();
 
   // OTA
-  OTA_setup();
+  // OTA_setup();
 
-  delay(2000);
+  // delay(2000);
 
   loadcell_setup();
   End_bootingBuzz();
@@ -58,9 +58,11 @@ void setup()
 
 void loop()
 {
-  display_main();
-  reconnectWiFi();
-  OTA_loop();
+  blipBuzz(200);
+  // display_main();
+  // reconnectWiFi();
+  // OTA_loop();
+  printData();
 
   timer.run();
 }
