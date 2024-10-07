@@ -7,9 +7,11 @@ void buzzer_setup()
 
 void blipBuzz(int x)
 {
-    digitalWrite(PIN_BUZZER, HIGH);
-    delay(x);
+    pinMode(PIN_BUZZER, OUTPUT);
     digitalWrite(PIN_BUZZER, LOW);
+    delay(x);
+    digitalWrite(PIN_BUZZER, HIGH);
+    pinMode(PIN_BUZZER, INPUT);
 }
 
 void Start_bootingBuzz()

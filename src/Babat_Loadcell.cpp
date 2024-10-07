@@ -8,10 +8,10 @@ float buffer[BUFFER_SIZE];
 byte bufferIndex = 0;
 
 //--------Kalman Filter---------//
-const float e_mea = 1;
-const float e_est = 1;
-const float q = 0.01;
-SimpleKalmanFilter KF(e_mea, e_est, q);
+// const float e_mea = 1;
+// const float e_est = 1;
+// const float q = 0.01;
+// SimpleKalmanFilter KF(e_mea, e_est, q);
 
 // Setup buffer
 void initializeBuffer()
@@ -54,10 +54,10 @@ float processedWeight()
     return sum / BUFFER_SIZE;
 }
 
-float processedWeight_KF()
-{
-    return KF.updateEstimate(rawWeight());
-}
+// float processedWeight_KF()
+// {
+//     return KF.updateEstimate(rawWeight());
+// }
 
 // Hasil perhitungan obat
 float estimatedCount()
@@ -65,10 +65,10 @@ float estimatedCount()
     return processedWeight() / OBAT_WEIGHT;
 }
 
-float estimatedCount_KF()
-{
-    return processedWeight_KF() / OBAT_WEIGHT;
-}
+// float estimatedCount_KF()
+// {
+//     return processedWeight_KF() / OBAT_WEIGHT;
+// }
 
 // Setup loadcell
 void loadcell_setup()

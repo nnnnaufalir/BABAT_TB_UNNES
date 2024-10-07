@@ -30,18 +30,17 @@ void setup()
   display_setup();
 
   // Buzzer
-  buzzer_setup();
   Start_bootingBuzz();
 
   display_booting();
 
   // WIFI
-  // connectToWiFi();
+  connectToWiFi();
 
   // OTA
-  // OTA_setup();
+  OTA_setup();
 
-  // delay(2000);
+  delay(2000);
 
   loadcell_setup();
   End_bootingBuzz();
@@ -58,11 +57,10 @@ void setup()
 
 void loop()
 {
-  blipBuzz(200);
   // display_main();
-  // reconnectWiFi();
-  // OTA_loop();
-  printData();
+  reconnectWiFi();
+  OTA_loop();
+  // printData();
 
   timer.run();
 }
