@@ -7,7 +7,7 @@
 // Konstanta
 #define FACTOR -276.160
 #define BUFFER_SIZE 15
-#define OBAT_WEIGHT 17.8
+#define OBAT_WEIGHT 17
 
 // Deklarasi fungsi
 void initializeBuffer();

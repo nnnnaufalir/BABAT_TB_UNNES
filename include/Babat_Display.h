@@ -7,8 +7,10 @@
 
 void display_clear();
 void display_setup();
-// void display_main();
+void display_main(int sisa_obat, byte id_box, byte jam_minum, byte mnt_minum, byte tglKontrol, byte bln_kontrol, int thnKontrol, String tgl, byte har, byte bul);
 void display_booting();
-// void display_trial();
+void date(String valDay, byte valDate, byte valMonth, int valYear);
+void time(byte valHour, byte valMinute);
+void notifKontrol(byte valueControlDate, String valueControlMonth, int valueControlYear);
 
 #endif
